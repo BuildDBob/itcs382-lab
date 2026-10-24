@@ -123,10 +123,10 @@ Number of SonarQube issues that remain after your fixes: 7
 
 The two design problems that you fixed
 
-| Design problem (course term) | What you changed                                                       | Commit |
-| ---------------------------- | ---------------------------------------------------------------------- | ------ |
-| Control Coupling             | Seperated printParcels into two methods instead of a selecting Boolean |        |
-| Logical Cohesion             |                                                                        |        |
+| Design problem (course term)        | What you changed                                                         | Commit  |
+| ----------------------------------- | ------------------------------------------------------------------------ | ------- |
+| Control Coupling                    | Seperated printParcels into two methods instead of a selecting Boolean   | 10c52ab |
+| Connascence of meaning (convention) | Created an enum Status file and implemented in ParcelService and Parcel. |         |
 
 Output of the program after your fixes, for the commands `store P1 6501 2`, `pickup P1 5` and `staff`, and the content of parcels.csv:
 

@@ -3,14 +3,14 @@ package parcelpoint;
 public class Parcel {
     private String code;
     private String studentId;
-    private int size;          // 1 = small, 2 = medium, 3 = large
-    public String status;
+    private int size; // 1 = small, 2 = medium, 3 = large
+    public Status status;
 
     public Parcel(String code, String studentId, int size) {
         this.code = code;
         this.studentId = studentId;
         this.size = size;
-        this.status = "NEW";
+        this.status = Status.NEW;
     }
 
     public String getCode() {

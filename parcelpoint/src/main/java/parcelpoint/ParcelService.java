@@ -27,7 +27,7 @@ public class ParcelService {
         for (Locker locker : lockers) {
             if (locker.isFree() && locker.getSize() >= parcel.getSize()) {
                 locker.setParcel(parcel);
-                parcel.status = "STORED";
+                parcel.status = Status.STORED;
                 parcels.add(parcel);
                 logger.info("SMS to " + parcel.getStudentId() + ": parcel "
                         + parcel.getCode() + " is in locker " + locker.getNumber());
@@ -43,7 +43,7 @@ public class ParcelService {
             Parcel parcel = locker.getParcel();
             if (parcel != null && parcel.getCode().equals(code)) {
                 locker.setParcel(null);
-                parcel.status = "PICKED_UP";
+                parcel.status = Status.PICKED_UP;
                 saveToFile();
                 return fee(parcel, days);
             }
@@ -74,7 +74,7 @@ public class ParcelService {
     public List<String> printParcelsList() {
         List<String> printing = new ArrayList<>();
         for (Parcel parcel : parcels) {
-            if (parcel.status.equals("STORED")) {
+            if (parcel.status.equals(Status.STORED)) {
                 printing.add(parcel.getCode() + " is waiting");
             }
         }
