@@ -38,13 +38,13 @@ Table 1. SonarQube issues in the starter code
 
 ## Task 2. AI review of the starter code
 
-| Item                                                                                   | Value                       |
-| -------------------------------------------------------------------------------------- | --------------------------- |
-| Date                                                                                   | Friday October 23, 2026     |
-| AI tool and exact model                                                                | Claude Opus 5.5             |
-| Commit reviewed                                                                        | First Commit (Starter code) |
-| How the AI read the files (attached the files, opened the folder, or pasted the files) | Attached the Files          |
-| Output file in the reviews folder                                                      | parcelpoint-review.md       |
+| Item                                                                                   | Value                   |
+| -------------------------------------------------------------------------------------- | ----------------------- |
+| Date                                                                                   | Friday October 23, 2026 |
+| AI tool and exact model                                                                | Claude Opus 5.5 Medium  |
+| Commit reviewed                                                                        | 357d0bc                 |
+| How the AI read the files (attached the files, opened the folder, or pasted the files) | Attached the Files      |
+| Output file in the reviews folder                                                      | parcelpoint-review.md   |
 
 Table 2. All findings on the starter code
 
@@ -93,7 +93,7 @@ Table 2. All findings on the starter code
 
 2.1 Name two problems that only the AI review found.
 
-One problem found was the lack of input validation (No. 5). This is a key finding as a lack of input validation is a huge security risk. Another is No. 12 regarding weak cohesion; this is also a good finding regarding code quality that SonarQube did not detect.
+One problem found was the lack of input validation (No. 5). This is a key finding as a lack of input validation can easily crash the program. Another is No. 12 regarding weak cohesion; this is also a good finding regarding code quality that SonarQube did not detect.
 
 2.2 Name one problem that only SonarQube found, or write none.
 
@@ -113,7 +113,7 @@ Table 3. What you did with each SonarQube issue in Table 1
 | 5              | Fixed         | 4d020a0                                                                                                                   |
 | 6              | Fixed         | 4d020a0                                                                                                                   |
 | 7              | Fixed         | fccfc7a                                                                                                                   |
-| 8              | Kept          | a6c056f                                                                                                                   |
+| 8              | Fixed         | a6c056f                                                                                                                   |
 | 9              | Fixed         | 41b5a6b                                                                                                                   |
 | 10-11          | Fixed         | 16c8fc4                                                                                                                   |
 | 12             | Fixed         | e0ddc90                                                                                                                   |
@@ -150,18 +150,18 @@ P1,PICKED_UP
 
 ## Task 4. AI-generated poor and good designs
 
-| Item                                                     | bikeshare-poor                   | bikeshare-good                          |
-| -------------------------------------------------------- | -------------------------------- | --------------------------------------- |
-| Date                                                     | October 24, 2026                 | October 24, 2026                        |
-| AI tool and exact model                                  | Opus 5.5 Medium                  | Opus 5.5 Medium                         |
-| Prompt (B or C as given, or your changed prompt in full) | B as given                       | C as given                              |
-| Builds with mvn package (yes or no)                      | yes                              |                                         |
-| Number of classes, interfaces, enums and records         | 1 class                          | 1 class, 2 records, 1 interface, 1 enum |
-| SonarQube issues, total                                  | 17                               | 2                                       |
-| SonarQube issues, by rule                                | 5                                | 2                                       |
-| AI review findings in Check 1                            | 9                                | 11                                      |
-| AI review findings in Check 2                            | 13                               | 15                                      |
-| Review output file in the reviews folder                 | reviews\bikeshare-poor-review.md | reviews\bikeshare-good-review.md        |
+| Item                                                     | bikeshare-poor                                   | bikeshare-good                          |
+| -------------------------------------------------------- | ------------------------------------------------ | --------------------------------------- |
+| Date                                                     | October 24, 2026                                 | October 24, 2026                        |
+| AI tool and exact model                                  | Opus 5.5 Medium                                  | Opus 5.5 Medium                         |
+| Prompt (B or C as given, or your changed prompt in full) | B as given                                       | C as given                              |
+| Builds with mvn package (yes or no)                      | yes                                              | yes                                     |
+| Number of classes, interfaces, enums and records         | 1 class                                          | 4 class, 3 records, 1 interface, 1 enum |
+| SonarQube issues, total                                  | 17                                               | 2                                       |
+| SonarQube issues, by rule                                | 7 (S106), 5(S2386), 2(S1192), 2(S3776), 1(S3358) | 1(S106), 1(S108)                        |
+| AI review findings in Check 1                            | 9                                                | 11                                      |
+| AI review findings in Check 2                            | 13                                               | 15                                      |
+| Review output file in the reviews folder                 | reviews\bikeshare-poor-review.md                 | reviews\bikeshare-good-review.md        |
 
 4.1 Did SonarQube report any cohesion or coupling problem in bikeshare-poor? Quote the rule and the message if it did.
 
