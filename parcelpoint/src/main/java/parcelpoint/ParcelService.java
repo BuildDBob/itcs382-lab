@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class ParcelService {
     Logger logger = Logger.getLogger(getClass().getName());
@@ -75,12 +76,12 @@ public class ParcelService {
     }
 
     private void saveToFile() {
-        try {
-            FileWriter writer = new FileWriter("parcels.csv");
+        try (FileWriter writer = new FileWriter("parcels.csv")) {
             for (Parcel parcel : parcels) {
                 writer.write(parcel.getCode() + "," + parcel.status + "\n");
             }
         } catch (IOException e) {
+            logger.log(Level.WARNING, "Could not save parcels.csv", e);
         }
     }
 }
