@@ -113,7 +113,7 @@ Table 3. What you did with each SonarQube issue in Table 1
 | 5              | Fixed         | 4d020a0                                                                                                                   |
 | 6              | Fixed         | 4d020a0                                                                                                                   |
 | 7              | Fixed         | fccfc7a                                                                                                                   |
-| 8              | Kept          |                                                                                                                           |
+| 8              | Kept          | a6c056f                                                                                                                   |
 | 9              | Fixed         |                                                                                                                           |
 | 10-11          | Fixed         |                                                                                                                           |
 | 12             | Fixed         |                                                                                                                           |
