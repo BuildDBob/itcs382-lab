@@ -110,8 +110,8 @@ Table 3. What you did with each SonarQube issue in Table 1
 | No. in Table 1 | Fixed or kept | Commit, or the reason for keeping it                                                                                      |
 | -------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | 1-4            | Kept          | Kept because this app is a console app and Main is the key way to view and interact with the app. It must be shown there. |
-| 5              | Fixed         |                                                                                                                           |
-| 6              | Fixed         |                                                                                                                           |
+| 5              | Fixed         | 4d020a0                                                                                                                   |
+| 6              | Fixed         | 4d020a0                                                                                                                   |
 | 7              | Fixed         |                                                                                                                           |
 | 8              | Fixed         |                                                                                                                           |
 | 9              | Fixed         |                                                                                                                           |
