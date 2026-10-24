@@ -63,12 +63,18 @@ public class ParcelService {
         return (days - 3) * 20.0;
     }
 
-    public List<String> printParcels(boolean forStaff) {
+    public List<String> printParcelsStaff() {
         List<String> printing = new ArrayList<>();
         for (Parcel parcel : parcels) {
-            if (forStaff) {
-                printing.add(parcel.getCode() + " " + parcel.getStudentId() + " " + parcel.status);
-            } else if (parcel.status.equals("STORED")) {
+            printing.add(parcel.getCode() + " " + parcel.getStudentId() + " " + parcel.status);
+        }
+        return printing;
+    }
+
+    public List<String> printParcelsList() {
+        List<String> printing = new ArrayList<>();
+        for (Parcel parcel : parcels) {
+            if (parcel.status.equals("STORED")) {
                 printing.add(parcel.getCode() + " is waiting");
             }
         }

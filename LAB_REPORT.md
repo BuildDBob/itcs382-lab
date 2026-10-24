@@ -116,17 +116,17 @@ Table 3. What you did with each SonarQube issue in Table 1
 | 8              | Kept          | a6c056f                                                                                                                   |
 | 9              | Fixed         | 41b5a6b                                                                                                                   |
 | 10-11          | Fixed         | 16c8fc4                                                                                                                   |
-| 12             | Fixed         |                                                                                                                           |
-| 13             | Fixed         |                                                                                                                           |
+| 12             | Fixed         | e0ddc90                                                                                                                   |
+| 13             | Fixed         | e0ddc90                                                                                                                   |
 
-Number of SonarQube issues that remain after your fixes:
+Number of SonarQube issues that remain after your fixes: 7
 
 The two design problems that you fixed
 
-| Design problem (course term) | What you changed | Commit |
-| ---------------------------- | ---------------- | ------ |
-|                              |                  |        |
-|                              |                  |        |
+| Design problem (course term) | What you changed                                                       | Commit |
+| ---------------------------- | ---------------------------------------------------------------------- | ------ |
+| Control Coupling             | Seperated printParcels into two methods instead of a selecting Boolean |        |
+| Logical Cohesion             |                                                                        |        |
 
 Output of the program after your fixes, for the commands `store P1 6501 2`, `pickup P1 5` and `staff`, and the content of parcels.csv:
 
