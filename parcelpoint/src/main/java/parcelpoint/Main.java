@@ -16,9 +16,9 @@ public class Main {
             } else if (words[0].equals("pickup")) {
                 System.out.println("Fee: " + service.pickUp(words[1], Integer.parseInt(words[2])));
             } else if (words[0].equals("list")) {
-                service.printParcels(false);
+                service.printParcels(true).forEach(System.out::println);
             } else if (words[0].equals("staff")) {
-                service.printParcels(true);
+                service.printParcels(true).forEach(System.out::println);
                 System.out.println("Free lockers: " + service.getLockers().stream().filter(Locker::isFree).count());
             } else if (words[0].equals("quit")) {
                 break;
