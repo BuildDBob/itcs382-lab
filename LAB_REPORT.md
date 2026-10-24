@@ -119,41 +119,59 @@ Table 3. What you did with each SonarQube issue in Table 1
 | 12             | Fixed         | e0ddc90                                                                                                                   |
 | 13             | Fixed         | e0ddc90                                                                                                                   |
 
-Number of SonarQube issues that remain after your fixes: 7
+Number of SonarQube issues that remain after your fixes: 8
 
 The two design problems that you fixed
 
 | Design problem (course term)        | What you changed                                                         | Commit  |
 | ----------------------------------- | ------------------------------------------------------------------------ | ------- |
 | Control Coupling                    | Seperated printParcels into two methods instead of a selecting Boolean   | 10c52ab |
-| Connascence of meaning (convention) | Created an enum Status file and implemented in ParcelService and Parcel. |         |
+| Connascence of meaning (convention) | Created an enum Status file and implemented in ParcelService and Parcel. | 1c5c302 |
 
 Output of the program after your fixes, for the commands `store P1 6501 2`, `pickup P1 5` and `staff`, and the content of parcels.csv:
 
 ```text
+Commands: store <code> <studentId> <size 1-3>, pickup <code> <days>, list, staff, quit
+store P1 6501 2
+Oct 24, 2026 5:49:36 PM parcelpoint.ParcelService storeParcel
+INFO: SMS to 6501: parcel P1 is in locker 2
+Locker 2
+pickup P1 5
+Fee: 30.0
+staff
+P1 6501 PICKED_UP
+Free lockers: 3
+quit
+```
 
+```
+P1,PICKED_UP
 ```
 
 ## Task 4. AI-generated poor and good designs
 
-| Item                                                     | bikeshare-poor | bikeshare-good |
-| -------------------------------------------------------- | -------------- | -------------- |
-| Date                                                     |                |                |
-| AI tool and exact model                                  |                |                |
-| Prompt (B or C as given, or your changed prompt in full) |                |                |
-| Builds with mvn package (yes or no)                      |                |                |
-| Number of classes, interfaces, enums and records         |                |                |
-| SonarQube issues, total                                  |                |                |
-| SonarQube issues, by rule                                |                |                |
-| AI review findings in Check 1                            |                |                |
-| AI review findings in Check 2                            |                |                |
-| Review output file in the reviews folder                 |                |                |
+| Item                                                     | bikeshare-poor                   | bikeshare-good                          |
+| -------------------------------------------------------- | -------------------------------- | --------------------------------------- |
+| Date                                                     | October 24, 2026                 | October 24, 2026                        |
+| AI tool and exact model                                  | Opus 5.5 Medium                  | Opus 5.5 Medium                         |
+| Prompt (B or C as given, or your changed prompt in full) | B as given                       | C as given                              |
+| Builds with mvn package (yes or no)                      | yes                              |                                         |
+| Number of classes, interfaces, enums and records         | 1 class                          | 1 class, 2 records, 1 interface, 1 enum |
+| SonarQube issues, total                                  | 17                               | 2                                       |
+| SonarQube issues, by rule                                | 5                                | 2                                       |
+| AI review findings in Check 1                            | 9                                | 11                                      |
+| AI review findings in Check 2                            | 13                               | 15                                      |
+| Review output file in the reviews folder                 | reviews\bikeshare-poor-review.md | reviews\bikeshare-good-review.md        |
 
 4.1 Did SonarQube report any cohesion or coupling problem in bikeshare-poor? Quote the rule and the message if it did.
 
+It did not label it cohesion or coupling exactly, but did say a code was too complex and should be refactored. The rule is S3776 and says "Refactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed. [+12 locations]?
+
 4.2 Did the AI review tell the two versions apart? Give one finding for bikeshare-poor that does not appear for bikeshare-good.
+The two AI reviews differed in severity of findings rather than number. The poor design version has 5 Must Fixes while good design has 1. Common coupling shows up in bikeshare-poor and not in bikeshare-good.
 
 4.3 Which version would you rather extend with a new member type, such as a visitor who pays 4 baht per minute, and why?
+Bikeshare-good, as the code quality is much better; adding in a new member type doesn't require too many changes and won't break anything.
 
 ## Task 5. Reflection
 
@@ -168,3 +186,4 @@ Output of the program after your fixes, for the commands `store P1 6501 2`, `pic
 | AI tool and exact model | Purpose                                                                                      | Files or parts that it produced or changed | How you checked its output                                                                    |
 | ----------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------- |
 | Opus 5.5 Medium         | Filling in last two columns of Table 2 (SonarQube Rule/ Course Term and finding correctness) | Table 2                                    | Read and understood code and AI check findings before comparing my own to the Table 2 output. |
+| Opus 5.5 Medium         | Troubleshooting and writing code fixes.                                                      | Main.java, ParcelService.java, Status.java | Checked and understood the propsed code before test running.                                  |
