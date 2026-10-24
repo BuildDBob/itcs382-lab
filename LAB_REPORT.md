@@ -1,16 +1,16 @@
 # Lab Report, Code Quality and Design Quality
 
-Repository URL:
+Repository URL: https://github.com/BuildDBob/itcs382-lab
 
 ## Tools
 
-| Item                    | Version or name |
-| ----------------------- | --------------- |
-| JDK                     |                 |
-| Maven                   |                 |
-| IDE                     |                 |
-| SonarQube for IDE       |                 |
-| AI tool and exact model |                 |
+| Item                    | Version or name                           |
+| ----------------------- | ----------------------------------------- |
+| JDK                     | openjdk version "25.0.4.1" 2026-08-18 LTS |
+| Maven                   | Apache Maven 3.10.0                       |
+| IDE                     | Version: 1.143.1 (user setup)             |
+| SonarQube for IDE       | Version: 6.2.0                            |
+| AI tool and exact model | Claude Opus 5.5 Medium                    |
 
 ## Task 1. SonarQube on the starter code
 
@@ -176,10 +176,15 @@ Bikeshare-good, as the code quality is much better; adding in a new member type 
 ## Task 5. Reflection
 
 5.1 What does SonarQube check, and what does it not check? Answer with examples from this lab.
+SonarQube checks for code quality such as bugs and code smells. It does not test core functional or business logic. For example, it could identify issues in using System.print.ln and not Logger; however, it would not be able to identify if Logger would fit that context (like in ParcelService where it would be better to have an output string rather than a log).
 
 5.2 When should you not trust the AI review? Give an example from this lab.
 
+I should not trust the AI review in comparing quality of code to other projects; for example, the bikeshare case. The poor design is evidently worse, but has a lower count of issues. Further reading of findings and evaluation must be done, and then it will be evident that the issue is in severity of findings.
+
 5.3 What will you do differently in Project Phase 2 after this lab?
+
+Regularly run SonarQube and commit corresponding changes and fixes. It will be easier to write good quailty but improving as you go along, not all at once. Additionally, committing will make project work and tracking easier when there are 5 other members.
 
 ## AI usage declaration
 
