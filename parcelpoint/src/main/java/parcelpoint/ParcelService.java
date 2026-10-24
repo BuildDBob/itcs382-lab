@@ -4,8 +4,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class ParcelService {
+    Logger logger = Logger.getLogger(getClass().getName());
+
     private List<Locker> lockers = new ArrayList<>();
     private List<Parcel> parcels = new ArrayList<>();
 
@@ -25,7 +28,7 @@ public class ParcelService {
                 locker.setParcel(parcel);
                 parcel.status = "STORED";
                 parcels.add(parcel);
-                System.out.println("SMS to " + parcel.getStudentId() + ": parcel "
+                logger.info("SMS to " + parcel.getStudentId() + ": parcel "
                         + parcel.getCode() + " is in locker " + locker.getNumber());
                 saveToFile();
                 return locker;

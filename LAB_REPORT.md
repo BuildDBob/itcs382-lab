@@ -112,8 +112,8 @@ Table 3. What you did with each SonarQube issue in Table 1
 | 1-4            | Kept          | Kept because this app is a console app and Main is the key way to view and interact with the app. It must be shown there. |
 | 5              | Fixed         | 4d020a0                                                                                                                   |
 | 6              | Fixed         | 4d020a0                                                                                                                   |
-| 7              | Fixed         |                                                                                                                           |
-| 8              | Fixed         |                                                                                                                           |
+| 7              | Fixed         | fccfc7a                                                                                                                   |
+| 8              | Kept          |                                                                                                                           |
 | 9              | Fixed         |                                                                                                                           |
 | 10-11          | Fixed         |                                                                                                                           |
 | 12             | Fixed         |                                                                                                                           |
